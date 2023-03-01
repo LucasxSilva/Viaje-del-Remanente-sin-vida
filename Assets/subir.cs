@@ -5,11 +5,13 @@ using UnityEngine;
 public class subir : MonoBehaviour
 {
     private Rigidbody2D rb2d;
+    private Vector3 inicio;
     public float velocidad;
 
     // Update is called once per frame
     void Start(){
         rb2d=GetComponent<Rigidbody2D>();
+        inicio=transform.position;
     }
 
     void FixedUpdate()
@@ -17,11 +19,14 @@ public class subir : MonoBehaviour
         rb2d.velocity = new Vector2(0, velocidad);
     }
 
-    //void OnTriggerEnter2D(Collider2D col)
-	//{
-        //if(col.gameObject.tag != "Player"){
-        //    col.gameObject.SetActive(false);
-       //     Destroy(col.gameObject, 6.0f);
-      //  }
-    //}
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+    void respawn(){
+        transform.position=inicio;
+    }
+
 }

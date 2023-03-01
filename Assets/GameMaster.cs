@@ -17,7 +17,6 @@ public class GameMaster : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Checkpoint")
 		{
-            
             pos=jugador.transform.position;
 			pos_checkpoint.transform.position=jugador.transform.position;
             Debug.Log("yey");

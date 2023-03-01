@@ -9,11 +9,13 @@ public class siguiente_nivel : MonoBehaviour
 
     public GameObject jugador,musica;
     public bool abierta=false;
+    public bool estado_base=false;
     void Awake(){
         jugador=GameObject.Find("hero");
     }
     void Start()
     {
+        estado_base=abierta;
 		anim = GetComponent<Animator> ();
 
     }
@@ -22,27 +24,42 @@ public class siguiente_nivel : MonoBehaviour
         anim.SetBool("abierta",abierta);
     }
 
-    void OnTriggerEnter2D(Collider2D col ){
+    void OnTriggerEnter2D(Collider2D col )
+    {
+        if (abierta==true)
+        {
+
+            if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Nivel 1")) 
             {
-        if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Nivel 1")) 
-            {
-                if (col.gameObject.tag == "Player" && abierta==true){
-                    jugador.transform.Translate(-150, -13, -1);
+                if (col.gameObject.tag == "Player"){
                     musica =  GameObject.Find("no destruir");
                     Destroy(musica);
                     SceneManager.LoadScene("Nivel 2");
                 } 
             }
 
-        else if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Nivel 2"))
+            else if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Nivel 2"))
             {
-                if (col.gameObject.tag == "Player" && abierta==true){
-                    jugador.transform.position = new Vector3(0,0,-1);
+                if (col.gameObject.tag == "Player"){
                     musica =  GameObject.Find("no destruir");
                     Destroy(musica);
                     SceneManager.LoadScene("Nivel 3");
                 } 
             }
+
         }
     }
+
+
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+
+    void respawn(){
+        abierta=estado_base;
+    }
+    
 }

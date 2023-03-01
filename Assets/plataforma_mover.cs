@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class plataforma_mover : MonoBehaviour
 {
-
     public Transform objetivo;
-    public float velocidad;
-
-    private Vector3 inicio,final;
+    public float velocidad,delay_velocidad;
+    private Vector3 default_inicial,default_final,inicio,final;
     void Start()
     {
         if (objetivo!=null){
@@ -16,8 +14,10 @@ public class plataforma_mover : MonoBehaviour
             inicio=transform.position;
             final=objetivo.position;
         }
+
     }
-        void FixedUpdate()
+
+    void FixedUpdate()
     {
         if (objetivo!=null){
             float fixedspeed = velocidad * Time.deltaTime;
@@ -26,7 +26,24 @@ public class plataforma_mover : MonoBehaviour
 
         if (transform.position == objetivo.position){
             objetivo.position = (objetivo.position == inicio ) ? final : inicio;
+            velocidad=velocidad/2;
+            Invoke("velocidad_restaurar",delay_velocidad);
         }
-        
+    }
+
+    void velocidad_restaurar(){
+            velocidad=velocidad*2;
+    }
+
+
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+    void respawn(){
+        transform.position=inicio;
+        objetivo.position=final;
     }
 }

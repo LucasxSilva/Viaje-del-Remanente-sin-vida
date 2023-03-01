@@ -12,14 +12,13 @@ public class skeleto_saltador : MonoBehaviour
     public AudioClip clip;
     private bool saltar_orden_en_3=false;
 
-    private Vector3 inicio,final;
-    private bool vuelta=true;
+    private Vector3 default_direccion,inicio,final;
     private Rigidbody2D rb2d;
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D> ();
         if (objetivo!=null){
-            objetivo.parent = null;
+            default_direccion=transform.localScale;
             inicio=transform.position;
             final=objetivo.position;
         }
@@ -33,19 +32,14 @@ public class skeleto_saltador : MonoBehaviour
         if (transform.position == objetivo.position)
         {
             objetivo.position = (objetivo.position == inicio ) ? final : inicio;
-            if (vuelta==true){
+            if (objetivo.position.x>transform.position.x)
+            {
                 transform.localScale = new Vector3(-1f,1f,1f);
-                vuelta=false;
             }
             else{
                 transform.localScale = new Vector3(1f,1f,1f);
-                vuelta=true;
-            };
+            }
         } 
-        
-        if (transform.position.y<=-55){
-            Destroy(transform.parent.gameObject);
-        }
 
         if (saltar_orden_en_3==false){
             Invoke("salto",delay_salto);
@@ -53,15 +47,10 @@ public class skeleto_saltador : MonoBehaviour
         }
     }
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Daña_Enemigos")
+        if (col.gameObject.tag == "Daña_Enemigos" || col.gameObject.tag == "Dañador_objeto")
         {
             AudioSource.PlayClipAtPoint(clip, transform.position);
-            Destroy(transform.parent.gameObject);
-        }
-        if (col.gameObject.tag == "Dañador_objeto")
-        {
-            AudioSource.PlayClipAtPoint(clip, transform.position);
-            Destroy(transform.parent.gameObject);
+            transform.parent.gameObject.SetActive(false);
         }
         if (col.gameObject.tag == "Player")
         {
@@ -71,6 +60,22 @@ public class skeleto_saltador : MonoBehaviour
     void salto(){
         rb2d.AddForce(Vector2.up * impulso_salto * 1);
         saltar_orden_en_3=false;
+    }
+
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        transform.position=inicio;
+        objetivo.position=final;
+        transform.localScale=default_direccion;
+        player_controller.OnPlayerDied -= respawn;
+    }
+
+    void respawn(){
+        transform.position=inicio;
+        objetivo.position=final;
+        transform.localScale=default_direccion;
     }
 
 }

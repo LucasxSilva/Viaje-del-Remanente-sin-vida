@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class check_piso : MonoBehaviour
 {
-
 	private player_controller jugador;
 	private Rigidbody2D rb2d; 
-
 
 
 	void Start()
@@ -29,7 +27,7 @@ public class check_piso : MonoBehaviour
 			jugador.tocando_piso = true;
 		}
 		if(col.gameObject.tag=="Plataforma"){
-			//jugador.transform.parent = col.transform;
+			jugador.transform.parent = col.transform;
 			jugador.tocando_piso = true;
 		}
 	}
@@ -39,7 +37,7 @@ public class check_piso : MonoBehaviour
 			jugador.tocando_piso = false;
 		}
 		if(col.gameObject.tag=="Plataforma"){
-			//jugador.transform.parent = null;
+			jugador.transform.parent = null;
 			jugador.tocando_piso = false;
 		}
 	}

@@ -8,7 +8,6 @@ public class calcular_vida : MonoBehaviour
     public GameObject corazon1,corazon2,corazon3,corazon4,corazon5;
     void FixedUpdate()
     {
-
         switch (player_controller.vida)
         {
             case 0:

@@ -57,10 +57,10 @@ GameObject:
   - component: {fileID: 2282505775223463387}
   - component: {fileID: 2282505775223463386}
   - component: {fileID: 2282505775223463385}
-  - component: {fileID: 2282505775223463384}
   - component: {fileID: 2282505775223463383}
   - component: {fileID: 2282505775223463382}
   - component: {fileID: 2282505775223463380}
+  - component: {fileID: 5616413650852647884}
   m_Layer: 9
   m_Name: 'skeleton_0 '
   m_TagString: "Da\xF1ador_matable"
@@ -144,7 +144,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c92aaabc92cbf00439fd1ff5c9549faf, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -166,21 +166,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desde: {fileID: 2282505775223463381}
   hasta: {fileID: 2282505773999123142}
---- !u!114 &2282505775223463384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282505775223463379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f49e1ed5da2e9e419011e3047bb5c83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objetivo: {fileID: 2282505773999123142}
-  velocidad: 2
-  clip: {fileID: 8300000, guid: 75b6db8e5d197e64ab21d2028665f3ad, type: 3}
 --- !u!50 &2282505775223463383
 Rigidbody2D:
   serializedVersion: 4
@@ -234,6 +219,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2, y: 2.2}
   m_Direction: 0
+--- !u!114 &5616413650852647884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282505775223463379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f49e1ed5da2e9e419011e3047bb5c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivo: {fileID: 2282505773999123142}
+  velocidad: 2
+  clip: {fileID: 8300000, guid: 75b6db8e5d197e64ab21d2028665f3ad, type: 3}
 --- !u!1 &2282505775913673849
 GameObject:
   m_ObjectHideFlags: 0

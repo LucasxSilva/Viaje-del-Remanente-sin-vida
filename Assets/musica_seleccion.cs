@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class musica_seleccion : MonoBehaviour
 {
-    private AudioSource audio;
+    private AudioSource audioo;
     void FixedUpdate(){
-        if (jefe.vida==0){
+        if (jefe.vida<=0 || jefe.vida==4){
             Destroy(gameObject);
         }
     }

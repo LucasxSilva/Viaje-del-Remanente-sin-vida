@@ -7,12 +7,11 @@ public class MenuPausa : MonoBehaviour
 {
 
     public GameObject Pausa;
-    public static int cont;
+    public bool isPaused = false;
 
     void Start()
     {
-        Pausa.SetActive(false);
-        cont = 0;
+        
     }
 
     void Update()
@@ -24,27 +23,25 @@ public class MenuPausa : MonoBehaviour
     }
     public void Cambio()
     {
-        if ( Time.timeScale>0)
+        if (!isPaused)
         {
             Pausear();
         }
-        else if(Time.timeScale == 0)
+        else if(isPaused)
         {
             Continuar();
         }
     }
     public void Pausear()
     {
-        cont = 1;
+        isPaused = true;
         Pausa.SetActive(true);
         Time.timeScale = 0;
     }
     public void Continuar()
     {
-        cont = 0;
+        isPaused = false;
         Pausa.SetActive(false);
         Time.timeScale = Difficulty.velocidad_tiempo;
-
-        
     }
 }

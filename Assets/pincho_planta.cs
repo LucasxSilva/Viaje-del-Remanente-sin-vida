@@ -29,33 +29,39 @@ public class pincho_planta : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (objetivo!=null){
-            if (arriba == true){
+        if (objetivo!=null)
+        {
+            if (arriba == true)
+            {
         		fixedspeed = velocidad1 * Time.deltaTime;
-
-                }else{
-        			fixedspeed = velocidad2 * Time.deltaTime;
-
-                }
-            if (moverse == true){
+            }
+            else
+            {
+        		fixedspeed = velocidad2 * Time.deltaTime;
+            }
+            if (moverse == true)
+            {
                 transform.position = Vector3.MoveTowards(transform.position, objetivo.position, fixedspeed);
             }
             
         }
         if (transform.position == objetivo.position)
         {
-            objetivo.position = (objetivo.position == inicio ) ? final : inicio;
-            if (arriba == true){
-                arriba = false;
-
-            }else{
-                Invoke("delay",delay_mover);
-                moverse = false;
+            objetivo.position = (objetivo.position == inicio ) ? final : inicio;  //if objetivo.position == inicio, entonces final sino inicio
+            
+            Invoke("delay",delay_mover);
+            moverse = false;
+            if (objetivo.position == final)
+            {
                 arriba = true;
+            }
+            else
+            {
+                arriba = false;
             }
         } 
     }
-        void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -65,5 +71,18 @@ public class pincho_planta : MonoBehaviour
     
     void delay(){
         moverse = true;
+    }
+
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+
+    void respawn(){
+        transform.position=inicio;
+        objetivo.position=final;;
+        moverse=true;
     }
 }

@@ -27,6 +27,6 @@ public class Difficulty : MonoBehaviour
             velocidad_tiempo = 1.25f;
             Time.timeScale = 1.25f;
         }
-        Debug.Log(dificultad);
+        //Debug.Log(dificultad);
     }
 }

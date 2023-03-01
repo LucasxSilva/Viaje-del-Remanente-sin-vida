@@ -7,7 +7,8 @@ public class no_destruir : MonoBehaviour
 
     public static no_destruir Instance;
     void Awake ()   
-    {
+    {   //primera vez
+        
         if (Instance == null)
         {
             DontDestroyOnLoad(this);

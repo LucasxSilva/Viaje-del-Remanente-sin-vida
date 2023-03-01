@@ -43,17 +43,9 @@ public class npc_summon : MonoBehaviour
         //        vuelta=true;
         //    };
         //} 
-        if (transform.position.y<=-55){
-            Destroy(transform.parent.gameObject);
-        }
     }
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Daña_Enemigos")
-        {
-            AudioSource.PlayClipAtPoint(clip, transform.position);
-            Destroy(transform.parent.gameObject);
-        }
-        if (col.gameObject.tag == "Dañador_objeto")
+        if (col.gameObject.tag == "Daña_Enemigos" || col.gameObject.tag == "Dañador_objeto")
         {
             AudioSource.PlayClipAtPoint(clip, transform.position);
             Destroy(transform.parent.gameObject);
@@ -66,5 +58,21 @@ public class npc_summon : MonoBehaviour
     void Buscar(){
         objetivo.transform.position=jugador.transform.position;
         orden_buscar=false;
+        if(transform.position.x>objetivo.transform.position.x){
+            transform.localScale = new Vector3(-1f,1f,1f);
+        }
+        if(transform.position.x<objetivo.transform.position.x){
+            transform.localScale = new Vector3(1f,1f,1f);
+        }
+    }
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+
+    void respawn(){
+        Destroy(transform.parent.gameObject);
     }
 }

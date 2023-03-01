@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,12 +22,17 @@ public class plataforma_caer : MonoBehaviour
             Invoke("caer",falldelay);
             Invoke("respawn",falldelay+respawndelay);
         }
-
     }
+    
     void caer(){
         rb2D.isKinematic = false;
     }
-
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
     void respawn(){
         transform.position=inicio;
         rb2D.isKinematic = true;

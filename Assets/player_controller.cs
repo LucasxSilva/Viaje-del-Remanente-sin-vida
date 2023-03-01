@@ -4,13 +4,15 @@ using UnityEngine.SceneManagement;
 
 
 public class player_controller : MonoBehaviour {
+	public delegate void PlayerDied();
+	public static event PlayerDied OnPlayerDied;
 
 	public static player_controller Instance;
 	public float velocidad = 100f;
 	public float impulso_salto = 450f;
-	public float limite_velocidad = 20f;
 	public bool tocando_piso;
 	public bool vivo=true;
+	public bool stun=false;
 	public bool atacando=false;
 	public bool ataque_listo=true;
 	private bool siendo_atacado_inmune=false;
@@ -26,11 +28,14 @@ public class player_controller : MonoBehaviour {
 	private bool saltar;
 	public Vector3 pos_jugador;
 	public GameObject pos_checkpoint,attack_effect;
+
 	public static int vida = 3;
-	SpriteRenderer sprite;
+	public SpriteRenderer sprite;
 
 	private float h;
+    public reset resett;
 
+	public float original_anim_Speed;
 
 	void Start()
 	{
@@ -41,12 +46,16 @@ public class player_controller : MonoBehaviour {
 		pos_checkpoint=GameObject.Find("pos_checkpoint");
 		attack_effect=GameObject.Find("attack_effect");
 		attack_effect.SetActive(false);
+		resett = GetComponent<reset>();
+		original_anim_Speed = anim.speed;
+
 	}
 	void Update()
 	{
 		anim.SetFloat("velocidad",Mathf.Abs(rb2d.velocity.x));
 		anim.SetBool("tocando_piso",tocando_piso);
 		anim.SetBool("vivo",vivo);
+		anim.SetBool("stun",stun);
 		anim.SetBool("atacando",atacando);
 		anim.SetBool("saltar",saltar);
 
@@ -62,35 +71,36 @@ public class player_controller : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.R)){
 			Invoke("respawn",0.5f);
 		}
+		Scene currentScene = SceneManager.GetActiveScene ();
+        string sceneName = currentScene.name;
 	}		
 
 	//FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
 	void FixedUpdate()
 	{
-        
-
-		if (vivo==true)
+		if (vivo==true && stun==false)
 		{
-			Vector3 fixedvelocity = rb2d.velocity;
-			fixedvelocity.x *= 0.9f;
-
-			rb2d.velocity = fixedvelocity;
+			//velocidad limite
+			if (rb2d.velocity.x>new Vector2(8f,0f).x)
+			{
+				rb2d.velocity *= new Vector2(0.909f,1f);
+				anim.speed= 1.1f+rb2d.velocity.x/20;
+			}
+			else{
+				anim.speed= original_anim_Speed;
+				rb2d.velocity *= new Vector2(0.9f,1f);
+			}
 
 			//Store the current horizontal input in the float h.
 			h = Input.GetAxis ("Horizontal");
 			if (tocando_piso==false){
 				rb2d.AddForce(Vector2.up * -1/2, ForceMode2D.Impulse);
 			}
-
-			//velocidad limite
-			float limitspeed = Mathf.Clamp(rb2d.velocity.x,-limite_velocidad,limite_velocidad);
 			rb2d.AddForce(Vector2.right * velocidad * h);
-			rb2d.velocity = new Vector2(limitspeed,rb2d.velocity.y);
 
 			//revisa si esta avanzando hacia izquierda o derecha y rota al personaje
 			if (h > 0.1f){
 				transform.localScale = new Vector3(1f,1f,1f);
-
 			}
 			if (h < -0.1f){
 				transform.localScale = new Vector3(-1f,1f,1f);
@@ -106,82 +116,36 @@ public class player_controller : MonoBehaviour {
 			if (atacando==true)
 			{
 				//attack_effect.transform.position=ataque_visible;
-				fixedvelocity.x*=0.8f;
-				rb2d.velocity=fixedvelocity;
+				rb2d.velocity*= new Vector2(0.8f,1f);
 				attack_effect.SetActive(true);
 				ataque_listo=false;
 				Invoke("stop_atack",atackdelay);
 			}
 		}
 		pos_jugador=GameObject.Find("hero").transform.position;
-
-
-        Scene currentScene = SceneManager.GetActiveScene ();
-        string sceneName = currentScene.name;
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
-        if (col.gameObject.tag == "Dañador")
-		{
-			if (vida==0){
-				vivo=false;
-				sprite.color = new Color (1,0,0,1);
-				AudioSource.PlayClipAtPoint(muere1, transform.position);
-				Invoke("respawn",respawndelay);
-			}
-			Debug.Log("Colisiona con Dañador, vida: "+ vida);
-        }
-
-		if (col.gameObject.tag=="Dañador_matable")
-		{
-			//añadir mensaje enviando metodo+posenemigo desde el script enemigo
-			if (vida==0){
-				vida=0;
-				vivo=false;
-				sprite.color = new Color (1,0,0,1);
-				AudioSource.PlayClipAtPoint(muere1, transform.position);
-				Invoke("respawn",respawndelay);
-			}
-			Debug.Log("Colisiona con Dañador_matable, vida: "+ vida);
-        }
-
 		if (col.gameObject.tag=="Dañador_objeto"){
 			vida=0;
 			vivo=false;
 			sprite.color = new Color (1,0,0,1);
 
 			AudioSource.PlayClipAtPoint(muerte_pinchos, transform.position);
-			Invoke("respawn",respawndelay);	
-			Debug.Log("Colisiona con Dañador_objeto, vida: "+ vida);
+			if (reviviendo==false){
+				reviviendo=true;
+				Invoke("respawn",respawndelay);	
+			}
 		}
 
 		if (col.gameObject.tag == "Checkpoint")
 		{
 			pos_checkpoint.transform.position=col.transform.position;
-        }
+		}
 	}
 		
-	void respawn(){
-		if (reviviendo==false){
-			if (SceneManager.GetActiveScene () == SceneManager.GetSceneByName ("Nivel 3")){
-				jefe.vida=3;
-			}
-			SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-			pos_checkpoint=GameObject.Find("pos_checkpoint");
-			this.transform.position=pos_checkpoint.transform.position;
-			Invoke("revivir_particulas",0.5f);
-			vivo=true;
-			vida=3;
-			sprite.color = new Color (1,1,1,1);
-			reviviendo=true;
-			Invoke("respawn_true",0);
-		}	
-    }
 
-	void respawn_true(){
-		reviviendo=false;
-	}
 
 	void stop_atack(){
 		atacando=false;
@@ -191,22 +155,34 @@ public class player_controller : MonoBehaviour {
 		void delaay_atack(){
 			ataque_listo=true;
 	}
-	void knockback(float enemyposx){
-		vivo=false;
+	public void knockback(float enemyposx){
+		stun=true;
 		float side = Mathf.Sign(enemyposx-transform.position.x); //devuelve positivo o negativo
 		rb2d.AddForce(Vector2.left * side * impulso_salto /2, ForceMode2D.Impulse);
 		if (siendo_atacado_inmune==false){
 			vida-=1;
 			AudioSource.PlayClipAtPoint(recibe_daño, transform.position);
-			Debug.Log("Daño recibido, vida: "+ vida);
+			
+			siendo_atacado_inmune=true;
+			sprite.color = new Color (1,0,0,1);
+			Invoke("desactivar_inmune",0.6f);
+
+			if (vida<=0){//revivir
+				vivo=false;
+				//siendo_atacado_inmune=true;
+				sprite.color = new Color (1,0,0,1);
+				AudioSource.PlayClipAtPoint(muere1, transform.position);
+				if (reviviendo==false){
+					reviviendo=true;
+					Invoke("respawn",respawndelay);
+				}
+			}
 		}
-		siendo_atacado_inmune=true;
-		sprite.color = new Color (1,0,0,1);
-		Invoke("desactivar_inmune",0.7f);
+
 	}
 	void desactivar_inmune(){
 		siendo_atacado_inmune=false;
-		vivo=true;
+		stun=false;
 		if (vida==3){
 			sprite.color=new Color (1,1,1,1);
 		}else if (vida==2){
@@ -215,7 +191,7 @@ public class player_controller : MonoBehaviour {
 			sprite.color=new Color (1,0.4f,0.4f,1);
 		}
 	}
-	void vida_bonus(int puntos){
+	public void vida_bonus(int puntos){
 		if (vida<5){
 			vida+=puntos;
 		}
@@ -226,8 +202,26 @@ public class player_controller : MonoBehaviour {
         }else if (vida==1){
             sprite.color=new Color (1,0.4f,0.4f,1);
         }
-        Debug.Log(vida);
     }
+
+	void respawn(){
+		resett.reseteo();
+		if (OnPlayerDied != null)
+		{
+			OnPlayerDied();
+		}
+		//SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+		pos_checkpoint=GameObject.Find("pos_checkpoint");
+		this.transform.position=pos_checkpoint.transform.position;
+		Invoke("revivir_particulas",0.5f);
+		vivo=true;
+		stun=false;
+		vida=3;
+		siendo_atacado_inmune=false;
+		sprite.color = new Color (1,1,1,1);
+		reviviendo=false;
+    }
+
 	void revivir_particulas(){
 		Instantiate(particulas_respawn, transform.position, Quaternion.identity);
 	}

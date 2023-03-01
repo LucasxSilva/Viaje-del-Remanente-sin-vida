@@ -18,12 +18,17 @@ public class ghost_patrol : MonoBehaviour
     private  Vector2 puntoB;
     private Vector2 posactual;
 
+    public Vector3 inicio,final,default_direccion;
 
-
-    private bool objetivo_alcanzado=true;
+    public bool objetivo_alcanzado=true;
 
     
-
+    void Start()
+    {
+        inicio=transform.position;
+        final=objetivo.position;
+        default_direccion=transform.localScale;
+    }
 
 
     void FixedUpdate()
@@ -34,33 +39,32 @@ public class ghost_patrol : MonoBehaviour
     		puntoA = new Vector2(transform.position.x,transform.position.y);
     		puntoB = new Vector2(objetivo.position.x,objetivo.position.y);
     		unavez = true;
-
     	}
-
 
 
         if (objetivo_alcanzado==true)
         {
-        	if (Aleatorio == true){
+        	if (Aleatorio == true)
+            {
         		posx=Random.Range(mincampos.x,maxcampos.x);
             	posy=Random.Range(mincampos.y,maxcampos.y);
             	objetivo_alcanzado=false;
 	        	objetivo.transform.position = new Vector2(posx,posy);
-	            
-	        }else{
+	        }
+            else
+            {
 	        	posactual = new Vector2(transform.position.x,transform.position.y);
-	        	if(posactual == puntoA){
+	        	if(posactual == puntoA)
+                {
 	        		objetivo.transform.position = puntoB;
-
-
-	        	}else{
+	        	}
+                else
+                {
 	        		objetivo.transform.position = puntoA;
-	        		
 	        	}
 	        	objetivo_alcanzado=false;
 					        	
 	        }
-
 
 
             if(transform.position.x>objetivo.transform.position.x){
@@ -70,15 +74,17 @@ public class ghost_patrol : MonoBehaviour
                 transform.localScale = new Vector3(1f,1f,1f);
             }
         }
-        if (transform.position == objetivo.position){
-            objetivo_alcanzado=true;
+
+
+        Vector2 diff = transform.position - objetivo.position;
+        if (diff.magnitude < 0.2f)// si la diferencia entre transform.position - objetivo.position es menor a 0.2f
+        {
+            objetivo_alcanzado = true;
         }
+
         float fixedspeed = velocidad * Time.deltaTime;
         
         transform.position = Vector2.MoveTowards(transform.position,objetivo.position, fixedspeed);
-
-        //Debug.Log(transform.position);
-        //Debug.Log(objetivo.position);
 
     }
     void OnTriggerEnter2D(Collider2D col){
@@ -88,5 +94,17 @@ public class ghost_patrol : MonoBehaviour
         }
     }
 
+
+    void OnEnable(){
+        player_controller.OnPlayerDied += respawn;
+    }
+    void OnDisable(){
+        player_controller.OnPlayerDied -= respawn;
+    }
+    void respawn(){
+        transform.position=inicio;
+        objetivo.position=final;
+        transform.localScale=default_direccion;
+    }
 }
 

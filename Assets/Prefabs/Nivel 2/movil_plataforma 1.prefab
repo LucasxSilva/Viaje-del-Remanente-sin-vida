@@ -87,6 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo: {fileID: 6056162325806735119}
   velocidad: 3
+  delay_velocidad: 0
 --- !u!251 &1260812578301589188
 PlatformEffector2D:
   m_ObjectHideFlags: 0

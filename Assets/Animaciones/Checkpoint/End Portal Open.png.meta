@@ -281,9 +281,9 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -304,6 +304,8 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
@@ -365,19 +367,19 @@ TextureImporter:
       name: End Portal Open_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 78
+        y: 1958
+        width: 154
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d585663eea5ed350800000000000000
-      internalID: 6043367729139123672
+      spriteID: 1131ec0554fa9e280800000000000000
+      internalID: -9013480466962050287
       vertices: []
       indices: 
       edges: []
@@ -386,19 +388,19 @@ TextureImporter:
       name: End Portal Open_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 399
+        y: 1958
+        width: 154
+        height: 195
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f207fa43cbb2b790800000000000000
-      internalID: -7515738380677217545
+      spriteID: 3f25a4a6d45286da0800000000000000
+      internalID: -5951465893144145165
       vertices: []
       indices: 
       edges: []
@@ -407,19 +409,19 @@ TextureImporter:
       name: End Portal Open_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 718
+        y: 1958
+        width: 154
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c22e8274371221900800000000000000
-      internalID: 653621674920960556
+      spriteID: b4ffa0af46f5ce830800000000000000
+      internalID: 4101758247924072267
       vertices: []
       indices: 
       edges: []
@@ -428,19 +430,19 @@ TextureImporter:
       name: End Portal Open_3
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 1039
+        y: 1958
+        width: 154
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1d21da4b95bb800800000000000000
-      internalID: 629195205480993196
+      spriteID: f217591cc7f126070800000000000000
+      internalID: 8098069700649775407
       vertices: []
       indices: 
       edges: []
@@ -449,19 +451,19 @@ TextureImporter:
       name: End Portal Open_4
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 1358
+        y: 1958
+        width: 154
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ace9fa46d4411c60800000000000000
-      internalID: 7787080917871881380
+      spriteID: 75121dc801b0b22a0800000000000000
+      internalID: -6761298249856769705
       vertices: []
       indices: 
       edges: []
@@ -470,19 +472,19 @@ TextureImporter:
       name: End Portal Open_5
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1915.7144
-        width: 315
-        height: 319.2857
+        x: 1679
+        y: 1958
+        width: 152
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 178e4b848280e20a0800000000000000
-      internalID: -6904572209600862095
+      spriteID: af18a459bdd2a6b70800000000000000
+      internalID: 8892970835322241530
       vertices: []
       indices: 
       edges: []
@@ -491,19 +493,19 @@ TextureImporter:
       name: End Portal Open_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 78
+        y: 1639
+        width: 153
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f17c1a1b60ec18f80800000000000000
-      internalID: -8105971326144887009
+      spriteID: 0a937494d388bb0c0800000000000000
+      internalID: -4558900400978708064
       vertices: []
       indices: 
       edges: []
@@ -512,19 +514,19 @@ TextureImporter:
       name: End Portal Open_7
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 418
+        y: 1649
+        width: 113
+        height: 163
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0f316bfec01a3d60800000000000000
-      internalID: 7870621779950124815
+      spriteID: ee4359d4c28b38db0800000000000000
+      internalID: -4790783078172379922
       vertices: []
       indices: 
       edges: []
@@ -533,19 +535,19 @@ TextureImporter:
       name: End Portal Open_8
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 759
+        y: 1659
+        width: 72
+        height: 142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 057509298d04fb6c0800000000000000
-      internalID: -4125507434732038320
+      spriteID: 08f6717659b2b2fa0800000000000000
+      internalID: -5824513772393894016
       vertices: []
       indices: 
       edges: []
@@ -554,19 +556,19 @@ TextureImporter:
       name: End Portal Open_9
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 1079
+        y: 1709
+        width: 72
+        height: 92
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1be02644b415a2a20800000000000000
-      internalID: 3038330282326494897
+      spriteID: 8a2e5f2676e0d4310800000000000000
+      internalID: 1390783697132053160
       vertices: []
       indices: 
       edges: []
@@ -575,19 +577,19 @@ TextureImporter:
       name: End Portal Open_10
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 1399
+        y: 1729
+        width: 62
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 325ba5b546b51edc0800000000000000
-      internalID: -3611504939586898653
+      spriteID: 46e63334b59785e40800000000000000
+      internalID: 5645395565785345636
       vertices: []
       indices: 
       edges: []
@@ -596,19 +598,19 @@ TextureImporter:
       name: End Portal Open_11
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1596.7144
-        width: 315
-        height: 319.2857
+        x: 1669
+        y: 1669
+        width: 82
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f34ba903c019e6250800000000000000
-      internalID: 5939844440089343039
+      spriteID: bda0ecd62a69a5250800000000000000
+      internalID: 5934221083385137883
       vertices: []
       indices: 
       edges: []
@@ -617,19 +619,19 @@ TextureImporter:
       name: End Portal Open_12
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 68
+        y: 1328
+        width: 154
+        height: 134
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64f8f1dec148584b0800000000000000
-      internalID: -5438795715207786682
+      spriteID: b45db7e595d1570b0800000000000000
+      internalID: -5731642681084619445
       vertices: []
       indices: 
       edges: []
@@ -638,19 +640,19 @@ TextureImporter:
       name: End Portal Open_13
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 389
+        y: 1328
+        width: 183
+        height: 153
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73a58ff05f6806180800000000000000
-      internalID: -9124144457959581129
+      spriteID: 9e49f27bd1d347fe0800000000000000
+      internalID: -1192260803509644055
       vertices: []
       indices: 
       edges: []
@@ -659,19 +661,19 @@ TextureImporter:
       name: End Portal Open_14
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 769
+        y: 1338
+        width: 132
+        height: 213
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25af2db31f9085ea0800000000000000
-      internalID: -5883941981464102318
+      spriteID: e132e62172d4bb220800000000000000
+      internalID: 2502678848142713630
       vertices: []
       indices: 
       edges: []
@@ -680,19 +682,19 @@ TextureImporter:
       name: End Portal Open_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 1049
+        y: 1398
+        width: 172
+        height: 153
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e4dca6894cb3fc50800000000000000
-      internalID: 6697904094808167648
+      spriteID: e44297e1616ada2d0800000000000000
+      internalID: -3265771540842994610
       vertices: []
       indices: 
       edges: []
@@ -701,19 +703,19 @@ TextureImporter:
       name: End Portal Open_16
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 1369
+        y: 1338
+        width: 193
+        height: 213
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19bd5cfee5b366400800000000000000
-      internalID: 317006102711884689
+      spriteID: 860334e0a9c079920800000000000000
+      internalID: 2996877932842135656
       vertices: []
       indices: 
       edges: []
@@ -722,19 +724,19 @@ TextureImporter:
       name: End Portal Open_17
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 1277.7144
-        width: 315
-        height: 319.2857
+        x: 1689
+        y: 1279
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9bf88b9ea8b860e50800000000000000
-      internalID: 6775256118168424377
+      spriteID: 099f3e1a510b60bf0800000000000000
+      internalID: -358405513372501616
       vertices: []
       indices: 
       edges: []
@@ -743,19 +745,19 @@ TextureImporter:
       name: End Portal Open_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 89
+        y: 959
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22d9ea4ce11881610800000000000000
-      internalID: 1592164437424250146
+      spriteID: 7ad62ad13421d8850800000000000000
+      internalID: 6380776326523153831
       vertices: []
       indices: 
       edges: []
@@ -764,19 +766,19 @@ TextureImporter:
       name: End Portal Open_19
       rect:
         serializedVersion: 2
-        x: 320
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 409
+        y: 959
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aecca667147e0fb30800000000000000
-      internalID: 4319206310993906922
+      spriteID: 48c20fe317c29c2b0800000000000000
+      internalID: -5563866999740683132
       vertices: []
       indices: 
       edges: []
@@ -785,19 +787,19 @@ TextureImporter:
       name: End Portal Open_20
       rect:
         serializedVersion: 2
-        x: 640
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 729
+        y: 959
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83b05f74093803450800000000000000
-      internalID: 6066493353773828920
+      spriteID: 14be694dade5f1f10800000000000000
+      internalID: 2242615433416338241
       vertices: []
       indices: 
       edges: []
@@ -806,19 +808,19 @@ TextureImporter:
       name: End Portal Open_21
       rect:
         serializedVersion: 2
-        x: 960
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 1049
+        y: 959
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c47de644167298890800000000000000
-      internalID: -7455384409421719732
+      spriteID: 052e90d9b8a00b740800000000000000
+      internalID: 5165640367345361488
       vertices: []
       indices: 
       edges: []
@@ -827,19 +829,19 @@ TextureImporter:
       name: End Portal Open_22
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 1369
+        y: 959
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ef571ac778cd6920800000000000000
-      internalID: 2985262544833699817
+      spriteID: d3845dd266bea3410800000000000000
+      internalID: 1457736253495920701
       vertices: []
       indices: 
       edges: []
@@ -848,19 +850,19 @@ TextureImporter:
       name: End Portal Open_23
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 958.7143
-        width: 315
-        height: 319.2857
+        x: 1689
+        y: 959
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6359c56bd2bbfbc30800000000000000
-      internalID: 4377423167834854710
+      spriteID: db09497b5cfaf6590800000000000000
+      internalID: -7678725575920021315
       vertices: []
       indices: 
       edges: []
@@ -869,19 +871,19 @@ TextureImporter:
       name: End Portal Open_24
       rect:
         serializedVersion: 2
-        x: 0
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 89
+        y: 638
+        width: 193
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b34bae309dd8ad570800000000000000
-      internalID: 8492256010573624379
+      spriteID: 32c6d450c3e21da90800000000000000
+      internalID: -7290995486414246877
       vertices: []
       indices: 
       edges: []
@@ -890,19 +892,19 @@ TextureImporter:
       name: End Portal Open_25
       rect:
         serializedVersion: 2
-        x: 320
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 409
+        y: 638
+        width: 192
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c20ebd942c2054a0800000000000000
-      internalID: -6606732117575597374
+      spriteID: 930399655e9ca0a40800000000000000
+      internalID: 5335298695411347513
       vertices: []
       indices: 
       edges: []
@@ -911,19 +913,19 @@ TextureImporter:
       name: End Portal Open_26
       rect:
         serializedVersion: 2
-        x: 640
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 729
+        y: 638
+        width: 193
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4bc3bbcd8e5467030800000000000000
-      internalID: 3492055427510385844
+      spriteID: df456c2a2fdbfe890800000000000000
+      internalID: -7426508410700016387
       vertices: []
       indices: 
       edges: []
@@ -932,19 +934,19 @@ TextureImporter:
       name: End Portal Open_27
       rect:
         serializedVersion: 2
-        x: 960
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 1049
+        y: 638
+        width: 192
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92f10a126d9dbc320800000000000000
-      internalID: 2579394725310111529
+      spriteID: a16c7606d55f25170800000000000000
+      internalID: 8165858855774307866
       vertices: []
       indices: 
       edges: []
@@ -953,19 +955,19 @@ TextureImporter:
       name: End Portal Open_28
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 1369
+        y: 638
+        width: 193
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2109b3d66d42c5120800000000000000
-      internalID: 2403836804483223570
+      spriteID: d42e5e9d8a1c383b0800000000000000
+      internalID: -5511348588016967091
       vertices: []
       indices: 
       edges: []
@@ -974,19 +976,19 @@ TextureImporter:
       name: End Portal Open_29
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 639.7143
-        width: 315
-        height: 319.2857
+        x: 1689
+        y: 638
+        width: 192
+        height: 274
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a0ca1ec663c1f160800000000000000
-      internalID: 7057636937378218145
+      spriteID: ef8b02f112d7e4820800000000000000
+      internalID: 2904396390910179582
       vertices: []
       indices: 
       edges: []
@@ -995,19 +997,19 @@ TextureImporter:
       name: End Portal Open_30
       rect:
         serializedVersion: 2
-        x: 0
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 89
+        y: 319
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbead11f94313bca0800000000000000
-      internalID: -6002432670055944513
+      spriteID: 27012f856af818f10800000000000000
+      internalID: 2270253631791042674
       vertices: []
       indices: 
       edges: []
@@ -1016,19 +1018,19 @@ TextureImporter:
       name: End Portal Open_31
       rect:
         serializedVersion: 2
-        x: 320
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 409
+        y: 319
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08820764b38747320800000000000000
-      internalID: 2554799084606072960
+      spriteID: 6b4a39d2fee665e30800000000000000
+      internalID: 4491899651889538230
       vertices: []
       indices: 
       edges: []
@@ -1037,19 +1039,19 @@ TextureImporter:
       name: End Portal Open_32
       rect:
         serializedVersion: 2
-        x: 640
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 729
+        y: 319
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ee3b90c0dc650430800000000000000
-      internalID: 3748521908696202978
+      spriteID: 24a1c78705c8282c0800000000000000
+      internalID: -4430824806132475326
       vertices: []
       indices: 
       edges: []
@@ -1058,19 +1060,19 @@ TextureImporter:
       name: End Portal Open_33
       rect:
         serializedVersion: 2
-        x: 960
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 1049
+        y: 319
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0ffcb1b310fc2fd0800000000000000
-      internalID: -2365251736899354866
+      spriteID: b4b15a533857dc710800000000000000
+      internalID: 1715156239499205451
       vertices: []
       indices: 
       edges: []
@@ -1079,19 +1081,19 @@ TextureImporter:
       name: End Portal Open_34
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 1369
+        y: 319
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 333af68aaf701a290800000000000000
-      internalID: -7881009099772550349
+      spriteID: 4b46a0583182d56d0800000000000000
+      internalID: -3000197712457341772
       vertices: []
       indices: 
       edges: []
@@ -1100,19 +1102,19 @@ TextureImporter:
       name: End Portal Open_35
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 320.7143
-        width: 315
-        height: 319.2857
+        x: 1689
+        y: 319
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01641dda8ae76f5a0800000000000000
-      internalID: -6487858950244841968
+      spriteID: 93ce915a2366c4690800000000000000
+      internalID: -7616600502086013895
       vertices: []
       indices: 
       edges: []
@@ -1121,19 +1123,19 @@ TextureImporter:
       name: End Portal Open_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1.7142944
-        width: 315
-        height: 319.2857
+        x: 89
+        y: 0
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5adc8ae4dc3c940f0800000000000000
-      internalID: -1132158544751571547
+      spriteID: 9254a140da81a43a0800000000000000
+      internalID: -6680499965873470167
       vertices: []
       indices: 
       edges: []
@@ -1142,19 +1144,19 @@ TextureImporter:
       name: End Portal Open_37
       rect:
         serializedVersion: 2
-        x: 320
-        y: 1.7142944
-        width: 315
-        height: 319.2857
+        x: 409
+        y: 0
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d31ff290a730930c0800000000000000
-      internalID: -4595638122079850179
+      spriteID: 9538a7a23a97b26e0800000000000000
+      internalID: -1861260279288265895
       vertices: []
       indices: 
       edges: []
@@ -1163,19 +1165,19 @@ TextureImporter:
       name: End Portal Open_38
       rect:
         serializedVersion: 2
-        x: 640
-        y: 1.7142944
-        width: 315
-        height: 319.2857
+        x: 729
+        y: 0
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c215ba67f7559d280800000000000000
-      internalID: -9018082772892561108
+      spriteID: 63a7dabc4a36256d0800000000000000
+      internalID: -3003228442059769290
       vertices: []
       indices: 
       edges: []
@@ -1184,19 +1186,19 @@ TextureImporter:
       name: End Portal Open_39
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1.7142944
-        width: 315
-        height: 319.2857
+        x: 1049
+        y: 0
+        width: 192
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4785868347fb30730800000000000000
-      internalID: 3964222602899642484
+      spriteID: 5d62920e7879655d0800000000000000
+      internalID: -3074103085796612395
       vertices: []
       indices: 
       edges: []
@@ -1205,40 +1207,19 @@ TextureImporter:
       name: End Portal Open_40
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 1.7142944
-        width: 315
-        height: 319.2857
+        x: 1369
+        y: 0
+        width: 193
+        height: 272
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 888734878aedbd940800000000000000
-      internalID: 5322092199821932680
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: End Portal Open_41
-      rect:
-        serializedVersion: 2
-        x: 1600
-        y: 1.7142944
-        width: 315
-        height: 319.2857
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fb3f6275f76de63e0800000000000000
-      internalID: -2058472137250376769
+      spriteID: 60100542ff3182480800000000000000
+      internalID: -8923860675087826682
       vertices: []
       indices: 
       edges: []
